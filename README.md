@@ -90,11 +90,9 @@ npm run format
 1. **CI** — format / lint / typecheck / build
 2. **Release** — CI 成功後に GitHub Release を作成
 
-Release には以下が添付されます:
+Release には Figma 読み込み用の ZIP（`manifest.json` + `dist/code.js` を同梱）が添付されます:
 
-- `PixelPaintWidget-vX.X.X.zip` — Figma 読み込み用（`manifest.json` + `dist/code.js`）
-- `manifest.json`
-- `dist/code.js`
+- `PixelPaintWidget-vX.X.X.zip`
 
 ### リリース手順
 
