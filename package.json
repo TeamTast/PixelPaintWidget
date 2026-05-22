@@ -4,7 +4,9 @@
   "description": "Your Figma widget",
   "scripts": {
     "build": "node scripts/build.mjs",
+    "build:ui": "node scripts/build.mjs --ui-only",
     "watch": "node scripts/build.mjs --watch",
+    "pretypecheck": "npm run build:ui",
     "typecheck": "tsc --noEmit -p widget-src && tsc --noEmit -p ui-src",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

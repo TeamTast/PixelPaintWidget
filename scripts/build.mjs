@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const rootDir = path.resolve(__dirname, '..')
 const watch = process.argv.includes('--watch')
+const uiOnly = process.argv.includes('--ui-only')
 
 async function buildUi() {
   const js = await esbuild.build({
@@ -92,6 +93,8 @@ if (watch) {
   }
 
   console.log('Watching for changes...')
+} else if (uiOnly) {
+  await buildUi()
 } else {
   await buildAll()
 }
