@@ -1,9 +1,5 @@
-# Node
-*.log
-*.log.*
 node_modules
-
-out/
-dist/
+dist
 code.js
 widget-src/editor-html.ts
+package-lock.json

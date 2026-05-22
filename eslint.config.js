@@ -4,10 +4,6 @@ const figmaPlugin = require('@figma/eslint-plugin-figma-plugins')
 
 module.exports = tseslint.config(
   eslint.configs.recommended,
-  // @typescript-eslint/recommended-type-checked is too aggressive for
-  // widget code...it doesn't seem to like JSX element return values or
-  // unbundling the `widget` object for use* hooks. So we'll use
-  // tseslint.configs.recommended instead.
   tseslint.configs.recommended,
   {
     plugins: {
@@ -15,7 +11,6 @@ module.exports = tseslint.config(
     },
     rules: {
       ...figmaPlugin.configs.recommended.rules,
-      // allow underscore-prefixing of unused variables
       '@typescript-eslint/no-unused-vars': [
         'error',
         {
@@ -27,6 +22,26 @@ module.exports = tseslint.config(
     },
   },
   {
-    ignores: ['code.js', 'dist', 'eslint.config.js'],
+    files: ['widget-src/**/*.{ts,tsx}'],
+    rules: {
+      ...figmaPlugin.configs.recommended.rules,
+    },
+  },
+  {
+    files: ['scripts/**/*.mjs'],
+    languageOptions: {
+      globals: {
+        console: 'readonly',
+        process: 'readonly',
+      },
+    },
+  },
+  {
+    ignores: [
+      'code.js',
+      'dist',
+      'eslint.config.js',
+      'widget-src/editor-html.ts',
+    ],
   },
 )

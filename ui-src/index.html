@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      /* INJECT_CSS */
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">
+      <div class="group" id="modeGroup">
+        <span class="label">Mode</span>
+        <button id="paintBtn" class="active">Paint</button>
+        <button id="eraseBtn">Erase</button>
+      </div>
+      <div class="group">
+        <span class="label">Brush</span>
+        <input id="brushSize" type="number" min="1" />
+      </div>
+      <div class="group">
+        <span class="label">Window</span>
+        <input id="uiWidth" type="number" min="1" />
+        <input id="uiHeight" type="number" min="1" />
+        <button id="applyWindow">Resize UI</button>
+      </div>
+      <div class="group">
+        <span class="label">Grid</span>
+        <button id="gridBtn">On</button>
+      </div>
+      <div class="group">
+        <span class="label">Size</span>
+        <input id="widthInput" type="number" min="1" />
+        <input id="heightInput" type="number" min="1" />
+        <button id="applySize">Resize</button>
+      </div>
+      <div class="group">
+        <span class="label">Palette</span>
+        <div class="palette" id="palette"></div>
+      </div>
+      <div class="group apply">
+        <button id="applyBtn" class="active">Apply to Widget</button>
+      </div>
+    </div>
+    <div class="canvas-wrap" id="canvasWrap">
+      <canvas id="canvas"></canvas>
+    </div>
+    <script>
+      /* INJECT_JS */
+    </script>
+  </body>
+</html>

@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "Your Figma widget",
   "scripts": {
-    "build": "esbuild widget-src/code.tsx --bundle --outfile=dist/code.js --target=es2017",
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "typecheck": "tsc --noEmit -p widget-src && tsc --noEmit -p ui-src",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "tsc": "tsc --noEmit -p widget-src",
-    "watch": "npm run build -- --watch"
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "author": "",
   "license": "",
@@ -18,6 +20,7 @@
     "@figma/widget-typings": "*",
     "esbuild": "*",
     "eslint": "^9.39.4",
+    "prettier": "^3.6.2",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.57.1"
   }
